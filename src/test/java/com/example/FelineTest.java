@@ -15,31 +15,35 @@ public class FelineTest {
         feline = new Feline();
     }
 
+    //Проверяем, что метод eatMeat() класса  Feline возвращает список Хищник
     @Test
     public void testFelineEatMeat() throws Exception {
         List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
         List<String> actualFood = feline.eatMeat();
-        assertEquals(expectedFood, actualFood);
+        assertEquals("Метод eatMeat должен возвращать список Хищник", expectedFood, actualFood);
     }
 
+    //Проверяем, что метод getFamily() класса Feline возвращает Кошачьи
     @Test
     public void testFelineGetFamily() {
         String expectedFelineFamily = "Кошачьи";
         String actualFelineFamily = feline.getFamily();
-        assertEquals(expectedFelineFamily, actualFelineFamily);
+        assertEquals("Метод getFamily у Feline должен возвращать Кошачьи", expectedFelineFamily, actualFelineFamily);
     }
 
+    //Проверяем, что метод getKittens() без аргументов возвращает дефолтное значение 1
     @Test
     public void getKittensWithoutParams() {
         int expectedKittensCount = 1;
         int actualKittensCount = feline.getKittens();
-        assertEquals(expectedKittensCount, actualKittensCount);
+        assertEquals("Метод getKittens() должен возвращать дефолтное значение 1", expectedKittensCount, actualKittensCount);
     }
 
+    //Проверяем, что метод getKittens() с аргументом kittensCount возвращает значение, переданное в kittensCount
     @Test
     public void getKittensWithParams() {
         int expectedKittensCount = 5;
         int actualKittensCount = feline.getKittens(expectedKittensCount);
-        assertEquals(expectedKittensCount, actualKittensCount);
+        assertEquals("Метод getKittens(kittensCount) должен возвращать заданное значение kittensCount", expectedKittensCount, actualKittensCount);
     }
 }

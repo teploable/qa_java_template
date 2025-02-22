@@ -32,9 +32,11 @@ public class LionParamTest {
         feline = Mockito.mock(Feline.class);
         lion = new Lion(sex, feline);
     }
+
+    //Проверяем, что метод doesHaveMane() возвращает соответствующее значение в зависимости от значения параметра sex
     @Test
     public void testHasMane() throws Exception {
         Lion lion = new Lion(sex, feline);
-        assertEquals(expectedMane, lion.doesHaveMane());
+        assertEquals("Метод doesHaveMane должен возвращать true для Самец и false для Самка", expectedMane, lion.doesHaveMane());
     }
 }

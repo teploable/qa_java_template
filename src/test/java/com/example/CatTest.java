@@ -23,15 +23,16 @@ public class CatTest {
         String expectedSound = "Мяу";
         String actualSound = cat.getSound();
 
-        assertEquals(expectedSound, actualSound);
+        assertEquals("Метод getSound у Cat должен возвращать Мяу", expectedSound, actualSound);
     }
 
+    //Метод getFood() класса Cat вызывает метод eatMeat() класса Feline и возращает список Хищник
     @Test
     public void getPredatorFood() throws Exception {
         Cat cat = new Cat(feline);
         List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(expectedFood);
         List<String> actualFood = cat.getFood();
-        assertEquals(expectedFood, actualFood);
+        assertEquals("Метод getFood у Cat должен возвращать список Хищник", expectedFood, actualFood);
     }
 }
